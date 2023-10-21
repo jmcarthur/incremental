@@ -8,7 +8,7 @@ import Prelude hiding (id)
 import Data.Maybe(fromJust, isNothing)
 import qualified Data.Set as Set
 
-import Lens.Simple
+import Control.Lens hiding (Const, Index)
 
 import qualified Kind             as K
 import qualified StabilizationNum as Stb
@@ -160,4 +160,3 @@ isStaleP ref = do
             Map4 _ _ _ _ _      -> isStaleWithRespectToAChild node
             Bind _ _ _ _        -> isStaleWithRespectToAChild node
             _                   -> return $ Stb.isNone rcp
-

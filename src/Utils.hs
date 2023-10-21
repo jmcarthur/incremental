@@ -4,7 +4,7 @@ module Utils
 import Data.IORef
 import Control.Monad.Trans.Class
 import Control.Monad.Trans.State.Strict(get)
-import Lens.Simple
+import Control.Lens
 
 import Types
 
@@ -31,5 +31,3 @@ getStbNum = do s <- get; return $ s^.info.stbNum
 
 getCurrScope :: StateIO Scope
 getCurrScope = do s <- get; return $ s^.info.currScope
-
-

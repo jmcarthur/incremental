@@ -7,7 +7,7 @@ import Prelude hiding (all)
 import Data.Maybe(isNothing, fromJust)
 import Unsafe.Coerce
 
-import Lens.Simple
+import Control.Lens
 
 import Types
 import qualified Node as N
@@ -60,4 +60,3 @@ modifyObs f i = modify (\s -> s & observer.all %~ (Map.adjust f i))
 
 modifyObsState :: ObsID -> ObsState -> StateIO ()
 modifyObsState i os = modifyObs (writeObsState os) i
-

@@ -3,7 +3,7 @@ module Var
 
 import Data.Maybe(fromJust, isNothing)
 
-import Lens.Simple
+import Control.Lens
 
 import Types
 import Utils
@@ -19,7 +19,3 @@ getValue :: Var a -> StateIO a
 getValue (Var ref) = do
   n <- readIORefT (getRef ref)
   return $ mvalue (n^.kind)
-
-
-
-

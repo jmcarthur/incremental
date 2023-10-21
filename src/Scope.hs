@@ -1,6 +1,6 @@
 module Scope where
 
-import Lens.Simple
+import Control.Lens
 
 import Types
 import Utils
@@ -15,4 +15,3 @@ addNodeForBind :: (Eq a, Eq b) => NodeRef b -> Kind a -> Kind a
 addNodeForBind nf b@(Bind _ _ _ nodes_on_rhs) =
   b{ nodesCreatedInScope = (pack nf): nodes_on_rhs }
 addNodeForBind _ _ = error "Scope.addNodeForBind wrong type of bind node in scope"
-

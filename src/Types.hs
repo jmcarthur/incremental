@@ -14,7 +14,7 @@ import Control.Monad.Trans.State.Strict (StateT)
 import Control.Concurrent.Async (Async)
 import Prelude hiding (all)
 
-import Lens.Simple
+import Control.Lens hiding (Const, none)
 
 type Index = Int
 type Height = Int

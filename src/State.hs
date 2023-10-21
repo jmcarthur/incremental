@@ -1,5 +1,5 @@
 module State where
-import Lens.Simple
+import Control.Lens hiding (Const)
 import Control.Monad.Trans.State.Strict
 import Control.Monad.Trans.Class
 import Control.Monad (when, foldM, foldM_)
@@ -533,4 +533,3 @@ printParents var = do
 -- TODO
 verbose :: Bool
 verbose = True
-
